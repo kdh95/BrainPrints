@@ -62,3 +62,47 @@ dfs(bt) # root 노드만 제공하면 root가 가리키는 Tree에 속한 모든
 
 # 재귀를 사용하는 방법은 각 노드는 서브트리라는 개념을 사용한 것이다.
 
+
+
+# DFS 방문하는 방법
+# 1.전위순회(preorder)
+# 2.중위순회(inorder)
+# 3.후위순회(postorder)
+
+# 1.전위순회에 대한 로직
+def preorder(cur_node):
+    if cur_node is None:
+        return
+    print(cur_node.value) # 해당 부분이 현재 Node에 방문하는 부분
+    preorder(cur_node.left)
+    preorder(cur_node.right)
+
+preorder(bt)
+# 자식노드들에 방문하기 전에 현재 노드에 방문하는 방법
+
+
+# 2. 중위순회에 대한 로직
+def inorder(cur_node):
+    if cur_node is None:
+        return
+    inorder(cur_node.left)
+    print(cur_node.value)
+    inorder(cur_node.right)
+
+inorder(bt)
+# 모든 left child 노드에 방문 후 해당 노드에 방문하는 방법
+
+
+# 3.후위순위에 대한 로직
+def postorder(cur_node):
+    if cur_node is None:
+        return
+    postorder(cur_node.left)
+    print(cur_node.value)
+    postorder(cur_node.right)
+
+postorder(bt)
+# 모든 left,right 자식 노드들에 대해 방문 후 자기 자신을 방문하는 방법
+
+# 순회에 따라 노드를 방문하는 순서가 달라진다**
+
