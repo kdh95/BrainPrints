@@ -44,3 +44,21 @@ def bfs(root):
 
 
 bfs(bt)
+
+
+
+# DFS (깊이 우선 탐색)
+# 1. Stack 반복문과 2. 재귀(recursion)이 존재하는데
+# 2. 재귀를 사용할 것이다.
+
+# 접근 방법에 대한 로직
+def dfs(cur_node):
+    if cur_node is None: # 이 부분이 처음 root 노드로 돌아왔을떄 return 하는 부분이다.
+        return
+    dfs(cur_node.left)
+    dfs(cur_node.right)
+
+dfs(bt) # root 노드만 제공하면 root가 가리키는 Tree에 속한 모든 노드에 접근가능하다.
+
+# 재귀를 사용하는 방법은 각 노드는 서브트리라는 개념을 사용한 것이다.
+
