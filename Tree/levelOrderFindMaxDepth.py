@@ -1,3 +1,4 @@
+# level order 방식으로 깊이 찾기
 
 from collections import deque
 
@@ -23,7 +24,7 @@ def maxDepth(root):
 root = [3, 9, 20, None, None, 15, 7]
 
 class TreeNode:
-    def _init_(self, l=None, r=None, v=0): # 초기화시 left, right 노드에 값이 없으면 None으로 초기화, value 값이 없으면 0으로 초기화
+    def __init__(self, l=None, r=None, v=0): # 초기화시 left, right 노드에 값이 없으면 None으로 초기화, value 값이 없으면 0으로 초기화
         self.left = l
         self.right = r
         self.value = v
