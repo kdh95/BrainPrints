@@ -66,7 +66,7 @@ def numIslands(grid):
                 next_y = cur_y + dy[i]
                 # 범위를 넘어가는지 체크
                 if next_x >= 0 and next_x < m and next_y >= 0 and next_y < n:
-                    # "1" 섬이고, 방문한적이 없는 경우에 로직 수행
+                    # "1" 섬이고, 방문한적이 없는 경우
                     if grid[next_x][next_y] == "1" and not visited[next_x][next_y]:
                         visited[next_x][next_y] = True
                         queue.append((next_x, next_y))
@@ -84,3 +84,4 @@ print(numIslands(grid=[
     ["0", "0", "1", "0", "0"],
     ["0", "0", "0", "1", "1"]
 ]))
+
