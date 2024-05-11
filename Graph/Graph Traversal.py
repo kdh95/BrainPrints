@@ -38,4 +38,19 @@ bfs(graph, 'A')
 
 
 # 2. 깊이 우선 탐색 (DFS)
+graph = {
+    'A': ['B', 'D', 'E'],
+    'B': ['A', 'C', 'D'],
+    'C': ['B'],
+    'D': ['A', 'B'],
+    'E': ['A']
+} # 전역변수로 뺴둠
+visited = []
 
+def dfs(cur_v):
+    visited.append(cur_v)
+    for v in graph[cur_v]:
+        if v not in visited:
+            dfs(v)
+
+dfs('A')
