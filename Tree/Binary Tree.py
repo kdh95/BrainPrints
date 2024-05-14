@@ -98,8 +98,8 @@ def postorder(cur_node):
     if cur_node is None:
         return
     postorder(cur_node.left)
-    print(cur_node.value)
     postorder(cur_node.right)
+    print(cur_node.value)
 
 postorder(bt)
 # 모든 left,right 자식 노드들에 대해 방문 후 자기 자신을 방문하는 방법
