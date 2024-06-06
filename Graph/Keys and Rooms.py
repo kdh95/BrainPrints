@@ -25,3 +25,13 @@
 # 연결되어있는 방을 모두 방문해보면 해결책이 나오지 않을까?
 
 # DFS/BFS 중 어떤게 더 효과적일까?
+# BFS의 경우 큐가 무조건적으로 필요하다.
+
+# DFS 의 시간복잡도는 O(Vertex + Edge)
+
+def canVisitAllRooms(rooms):
+    pass
+
+
+rooms = [[1, 3], [3, 0, 1], [2], [0]]
+print(canVisitAllRooms())
