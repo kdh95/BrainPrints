@@ -30,8 +30,22 @@
 # DFS 의 시간복잡도는 O(Vertex + Edge)
 
 def canVisitAllRooms(rooms):
+    visited = [] # 방을 방문했는지 확인하는 리스트 선언
+
+    # cur_v에 연결되어있는 모든 vertex에 방문할 것이다.
+    def dfs(cur_v):
+        visited.append(cur_v) # 방문표시를 한다.
+        for next_v in rooms[cur_v]:
+            if next_v not in visited: # 방문하지 않은 곳만 방문해야하기 때문에 해당 로직이 들어간다.
+                dfs(next_v)
+
+    dfs(0)
+
+    if visited == len(rooms): return True
+    else: return False
+
     pass
 
 
-rooms = [[1, 3], [3, 0, 1], [2], [0]]
-print(canVisitAllRooms())
+rooms = [[1, 3], [2, 4], [0], [4], [], [3, 4]]
+print(canVisitAllRooms(rooms))
