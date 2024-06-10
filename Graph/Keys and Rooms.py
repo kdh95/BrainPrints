@@ -29,22 +29,60 @@
 
 # DFS 의 시간복잡도는 O(Vertex + Edge)
 
-def canVisitAllRooms(rooms):
-    visited = [] # 방을 방문했는지 확인하는 리스트 선언
+# def canVisitAllRooms(rooms):
+#     visited = [] # 방을 방문했는지 확인하는 리스트 선언
+#
+#     # cur_v에 연결되어있는 모든 vertex에 방문할 것이다.
+#     def dfs(cur_v):
+#         visited.append(cur_v) # 방문표시를 한다.
+#         for next_v in rooms[cur_v]:
+#             if next_v not in visited: # 방문하지 않은 곳만 방문해야하기 때문에 해당 로직이 들어간다. 근데 딕셔너리가 아니라 리스트이기 때문에 not in은 적합하지 않아 보인다.
+#                 dfs(next_v)
+#
+#     dfs(0)
+#
+#     if visited == len(rooms): return True
+#     else: return False
 
-    # cur_v에 연결되어있는 모든 vertex에 방문할 것이다.
-    def dfs(cur_v):
-        visited.append(cur_v) # 방문표시를 한다.
-        for next_v in rooms[cur_v]:
-            if next_v not in visited: # 방문하지 않은 곳만 방문해야하기 때문에 해당 로직이 들어간다.
+# 위의 코드는 시간복잡도가 너무 오래걸린다. visited를 리스트로 선언했기 때문에
+# 방문해야 하는 방이 많아지는 경우 방문여부를 체크할때 시간복잡도가 증가하게 된다.
+# 이를 해결해보자
+def canVisitedAllRooms(rooms):
+    # rooms의 길이만큼 초기화를 해준다. index를 사용하려고 이렇게 초기화를 한다.
+    visited = [False] * len(rooms)
+
+    def dfs(v):
+        visited[v] = True
+        for next_v in rooms[v]:
+            if visited[next_v] == False:
                 dfs(next_v)
-
     dfs(0)
+    # if len(visited) == len(rooms):
+    #     return True
+    # else:
+    #     return False
+    return all(visited) # 모두 True인지 확인해주는 python 함수
 
-    if visited == len(rooms): return True
-    else: return False
+from collections import deque
+# bfs로 한번 해보자
+def canVisitedAllRoomsbyBfs(rooms):
+    visited = [False] * len(rooms)
 
-    pass
+    def bfs(v):
+        queue = deque()
+        queue.append(v)
+        visited[v] = True
+        while queue:
+            cur_v = queue.popleft()
+            for next_v in rooms(cur_v):
+                if visited[next_v] == False:
+                    queue.append(next_v)
+                    visited[next_v] = True
+
+    bfs(0)
+
+    return all(visited)
+
 
 
 rooms = [[1, 3], [2, 4], [0], [4], [], [3, 4]]
