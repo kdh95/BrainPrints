@@ -58,6 +58,6 @@ def fibo(n):
 
 
 DP 에는 2가지 방법이 있다.
-1. TOP DOWN
-2. BOTTOM UP
+1. TOP-DOWN
+2. BOTTOM-UP
 
