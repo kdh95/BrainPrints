@@ -40,3 +40,24 @@ def fibo(n):
  - overlapping subproblem - 중복된 하위 문제가 발생하였을때
  - memoization - 계산 결과를 저장하여 중복된 문제에 사용한다.
 (3) 하위 문제에 대한 답으로 원래 문제에 대한 답을 계산한다.
+
+메모리에 있는 값을 가져다 쓸 수 있기 때문에 재귀함수의 왼쪽 부분만 실행하면 오른쪽은 메모리에 있는
+데이터를 가져다 쓸 수 있다.
+
+그렇기 때문에 시간복잡도가 O(n)으로 낮아진다.
+
+memo = {}
+
+def fibo(n):
+    if n == 1 or n == 2:
+        return 1
+    if n not in memo:
+        memo[n] = fibo(n-1) + fibo(n-2)
+    return memo[n]
+
+
+
+DP 에는 2가지 방법이 있다.
+1. TOP DOWN
+2. BOTTOM UP
+
