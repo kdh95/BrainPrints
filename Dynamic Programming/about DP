@@ -83,3 +83,15 @@ def fibo(n):
 
     return memo[n]
 
+
+
+
+총 정리
+DP란
+1. Overlapping subproblem
+  - Problem을 작은 subproblem으로 분해
+  - subproblem의 계산값을 재사용
+2. Optimal substructure
+  - subproblem의 최적 해법으로 원래 문제의 최적 해법을 구할 수 있다.
+
+
