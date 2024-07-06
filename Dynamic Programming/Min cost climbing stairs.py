@@ -45,9 +45,16 @@
 cost = [10, 15, 20, 17, 1]
 memo = {} # 계산한 값을 넣어주고 꺼내쓴다.
 
+# 계단 꼭대기 입장에서 생각해본 풀이
 def dp(n):
     if n == 0 and n == 1:
         return 0
     if n not in memo:
         memo[n] = min(dp(n-1) + cost[n-1], dp(n-2) + cost[n-2])
     return memo[n]
+
+
+# DP (Bottom-up) 방식
+
+
+
