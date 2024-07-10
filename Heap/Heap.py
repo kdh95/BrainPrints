@@ -26,4 +26,12 @@ heapq.heappop(min_heap) # -> dequeue 우선순위가 가장 높은 root 노드�
 # 그러면 정의에 어긋나게된다.
 # 그렇기 때문에 우선순위를 바로잡게 된다. 자식노드들 중 가장 작은 값을 비교해서 우선순위가 높은 노드로 root로 가져온다.
 # 위 방법을 반복해서 다시 완전 이진 트리를 만들게 된다.
+# 이 방법을 shift down 이라고 하는데 트리의 높이 만큼 실행하게 된다. 시간복잡도 = O(logN)
 print(min_heap)
+
+
+# heap push
+# enqueue
+heapq.heappush(min_heap, 1)
+# 이번에는 shift up을 진행한다. 부모 노드와 값을 비교해서 스왑을 진행한다.
+# 위 방법을 반복한다. 트리의 높이만큼 반복하기 때문에 시간복잡도는 O(logN)이 된다.
