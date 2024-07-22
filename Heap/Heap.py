@@ -35,3 +35,9 @@ print(min_heap)
 heapq.heappush(min_heap, 1)
 # 이번에는 shift up을 진행한다. 부모 노드와 값을 비교해서 스왑을 진행한다.
 # 위 방법을 반복한다. 트리의 높이만큼 반복하기 때문에 시간복잡도는 O(logN)이 된다.
+
+
+
+# heapify() O(N)
+# heappush() O(logN)
+# heappop()  O(logN)
