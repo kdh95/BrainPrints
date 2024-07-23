@@ -41,3 +41,13 @@ heapq.heappush(min_heap, 1)
 # heapify() O(N)
 # heappush() O(logN)
 # heappop()  O(logN)
+
+
+
+
+# max heap
+import heapq
+
+max_heap = [5, 4, 9, 5, 1, 2, 6]
+heapq._heapify_max(max_heap)
+value = heapq._heappop_max(max_heap)
